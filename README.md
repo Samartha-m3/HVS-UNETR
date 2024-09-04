@@ -11,7 +11,7 @@ This model was trained on data obtained from the Medical Decathlon Challenge and
 The training algorithm was written in ipython and based closely off of MONAI's tutorial on [multi-organ segmentation](https://github.com/Project-MONAI/tutorials/blob/main/3d_segmentation/unetr_btcv_segmentation_3d.ipynb) (BTCV Challenge). Below is an overview of some of the hyper-parameters:  
 **Model**: UNETR (MONAI)  
 **Loss function**: DiceCELoss (MONAI)  
-**Evaluation Metric**: DiceMetric  
+**Evaluation Metric**: DiceMetric (MONAI)  
 **Epoch count**: 100  
 **Transforms** (MONAI):
  - [SpatialPad](https://docs.monai.io/en/stable/transforms.html#monai.transforms.SpatialPad)
@@ -21,7 +21,7 @@ The training algorithm was written in ipython and based closely off of MONAI's t
  - [RandomIntensityShift](https://docs.monai.io/en/stable/transforms.html#monai.transforms.RandShiftIntensity)
 
 ## Results
-The current model was trained on image resolution of 224 * 224 * 224 and shows a Dice score of 56.39%. Despite a disappointingly low dice score, the generated prediction maps seem fairly accurate, potentially meaning that the evaluation metric assigned wrong weights to compute the scores. Given below is an example of the model prediction   
+The current model was trained on image resolution of 224 * 224 * 224 and shows a Dice score of 56.39%. Despite a low dice score, the generated prediction maps seem fairly accurate, potentially meaning that the evaluation metric assigned wrong weights to compute the scores. Given below is an example of the model prediction   
 ![result image - .readme_files/result.png](.readme_files/result.png)
 Shown below is the learning pattern across 100 epochs, monitored once every 5 epochs:
 ![plot image - .readme_files/plot.png](.readme_files/plot.png)
